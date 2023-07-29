@@ -22,22 +22,41 @@ export default function Skills({}: Props) {
       </h3>
 
       <div className='grid grid-cols-4 gap-5'>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill directionLeft={true}/>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        <Skill
+          directionLeft={true}
+          imgSrc={'https://i.ibb.co/hmVGGzT/html-5-5968267.png'}
+          progress={'90%'}
+        />
+        <Skill
+          directionLeft={true}
+          imgSrc={'https://i.ibb.co/XFYJbmJ/css-3-5968242.png'}
+          progress={'70%'}
+        />
+        <Skill
+          directionLeft={true}
+          imgSrc={'https://i.ibb.co/jkVhNDL/js-5968292.png'}
+          progress={'60%'}
+        />
+        <Skill
+          directionLeft={true}
+          imgSrc={'https://i.ibb.co/tsBBPkg/chakra-ui.jpg'}
+          progress={'70%'}
+        />
+        <Skill
+          directionLeft={false}
+          imgSrc={'https://i.ibb.co/0YcG9dP/tailwind-css-icon.png'}
+          progress={'20%'}
+        />
+        <Skill
+          directionLeft={false}
+          imgSrc={'https://i.ibb.co/bPqJkyR/react.png'}
+          progress={'80%'}
+        />
+        <Skill
+          directionLeft={false}
+          imgSrc={'https://i.ibb.co/Zd3HBFZ/nextjs.png'}
+          progress={'30%'}
+        />
       </div>
     </motion.div>
   );
