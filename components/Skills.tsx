@@ -21,7 +21,7 @@ export default function Skills({}: Props) {
         Hover over a skill for current profieciency
       </h3>
 
-      <div className='grid grid-cols-4 gap-5'>
+      <div className='w-fit grid grid-cols-4 gap-3'>
         <Skill
           directionLeft={true}
           imgSrc={'https://i.ibb.co/hmVGGzT/html-5-5968267.png'}
