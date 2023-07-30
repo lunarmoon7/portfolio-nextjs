@@ -34,18 +34,10 @@ export default function ContactMe({}: Props) {
         </h4>
 
         <div className='space-y-5 flex flex-col items-start justify-center'>
-          {/* <div className='flex items-center justify-center space-x-5'>
-            <PhoneIcon className='text-[#f7ab0a] h-7 w-7 animate-pulse' />
-            <p className='text-lg sm:text-2xl'>+1065777996</p>
-          </div> */}
           <div className='flex items-center justify-center space-x-5'>
             <EnvelopeIcon className='text-[#f7ab0a] h-7 w-7 animate-pulse' />
             <p className='text-lg sm:text-2xl'>zentechie7@gmail.com</p>
           </div>
-          {/* <div className='flex items-center justify-center space-x-5'>
-            <PhoneIcon className='text-[#f7ab0a] h-7 w-7 animate-pulse' />
-            <p className='text-lg sm:text-2xl'>123 Developer Lane</p>
-          </div> */}
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className='w-full flex flex-col space-y-2 sm:w-fit mx-auto'>
