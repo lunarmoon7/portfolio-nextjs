@@ -57,15 +57,18 @@ export default function About({}: Props) {
 
             <ul className='tracking-normal'>
               <li>
-                <span className='font-semibold mr-3'>1998</span> 서울에서 태어남
+                <span className='font-semibold mr-3'>1998</span> 서울 출생
               </li>
               <li>
                 <span className='font-semibold mr-3'>2017</span> 서울
                 구암고등학교 졸업
               </li>
               <li>
-                <span className='font-semibold mr-3'>2024</span> 건국대학교
-                컴퓨터공학부 학사 졸업
+                <span className='font-semibold mr-3'>2024</span> 서울 건국대학교
+                컴퓨터공학부 학사{' '}
+                <span className='underline decoration-[#f7ab0a]/50'>
+                  2월 졸업 예정
+                </span>
               </li>
             </ul>
           </div>
