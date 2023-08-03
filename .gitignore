@@ -8,10 +8,6 @@
 # testing
 /coverage
 
-
-.env
-app/studio
-.sanity
 # next.js
 /.next/
 /out/
