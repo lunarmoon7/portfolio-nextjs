@@ -2,10 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-type Props = {};
+import { Project } from '@/typings';
+import { urlForImage } from '@/sanity/lib/image';
+type Props = {
+  projects: Project[];
+};
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,21 +31,29 @@ export default function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              src='https://i.ibb.co/4t9mYH4/Profile-Image-1.jpg'
+              src={urlForImage(project?.image).url()}
               alt=''
+              className='w-96 h-96'
             />
             <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
               <h4 className='text-4xl font-semibold text-center'>
                 <span className='underline decoration-[#f7ab0a]/50'>
                   Case Study {i + 1} of {projects.length}:
                 </span>{' '}
-                UPS Clone
+                {project?.title}
               </h4>
+              <div className='flex items-center space-x-2 justify-center'>
+                {project?.technologies.map((technology) => (
+                  <img
+                    className='h-10 w-10'
+                    key={technology._id}
+                    src={urlForImage(technology.image).url()}
+                    alt=''
+                  />
+                ))}
+              </div>
               <p className='text-lg text-center md:text-left'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                enim deserunt ea debitis nulla aperiam voluptatum consequatur
-                error facere quibusdam officia ullam sunt facilis reprehenderit
-                dicta, a, voluptate, labore voluptatem!
+                {project?.summary}
               </p>
             </div>
           </div>

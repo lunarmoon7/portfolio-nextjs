@@ -3,10 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Skill from './Skill';
+import { Skill as SkillType} from '@/typings';
 
-type Props = {};
+type Props = {
+  skills: SkillType[];
+  directionLeft?: boolean;
+};
 
-export default function Skills({}: Props) {
+export default function Skills({skills, directionLeft }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,41 +26,12 @@ export default function Skills({}: Props) {
       </h3>
 
       <div className='w-fit grid grid-cols-4 gap-3'>
-        <Skill
-          directionLeft={true}
-          imgSrc={'https://i.ibb.co/hmVGGzT/html-5-5968267.png'}
-          progress={'90%'}
-        />
-        <Skill
-          directionLeft={true}
-          imgSrc={'https://i.ibb.co/XFYJbmJ/css-3-5968242.png'}
-          progress={'70%'}
-        />
-        <Skill
-          directionLeft={true}
-          imgSrc={'https://i.ibb.co/jkVhNDL/js-5968292.png'}
-          progress={'60%'}
-        />
-        <Skill
-          directionLeft={true}
-          imgSrc={'https://i.ibb.co/tsBBPkg/chakra-ui.jpg'}
-          progress={'70%'}
-        />
-        <Skill
-          directionLeft={false}
-          imgSrc={'https://i.ibb.co/0YcG9dP/tailwind-css-icon.png'}
-          progress={'20%'}
-        />
-        <Skill
-          directionLeft={false}
-          imgSrc={'https://i.ibb.co/bPqJkyR/react.png'}
-          progress={'80%'}
-        />
-        <Skill
-          directionLeft={false}
-          imgSrc={'https://i.ibb.co/Zd3HBFZ/nextjs.png'}
-          progress={'30%'}
-        />
+        {skills?.slice(0, skills.length / 2).map((skill) => (
+          <Skill key={skill._id} skill={skill} />
+        ))}
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill key={skill._id} skill={skill} directionLeft/>
+        ))}
       </div>
     </motion.div>
   );

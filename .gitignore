@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+sanity
+sanity.cli.js
+sanity.config.js
+.env
+app/studio
+.sanity
 # next.js
 /.next/
 /out/

@@ -2,10 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PageInfo } from '@/typings';
+import { urlForImage } from '@/sanity/lib/image';
+type Props = {
+  pageInfo: PageInfo;
+};
 
-type Props = {};
-
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -21,8 +24,8 @@ export default function About({}: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        src='https://i.ibb.co/4t9mYH4/Profile-Image-1.jpg'
-        className='-mb-20 md:mb-0 flex-shrink-0 w-25 h-25 rounded-full object-cover md:rounded-lg md:w-30 md:h-35 xl:w-[300px] xl:h-[300px]'
+        src={urlForImage(pageInfo?.profilePic).url()}
+        className='-mb-20 md:mb-0 w-44 h-44 rounded-full object-cover md:rounded-lg md:w-56 md:h-56 xl:w-[300px] xl:h-[300px]'
       />
 
       <div className='space-y-10 px-0 md:px-10'>
@@ -41,10 +44,7 @@ export default function About({}: Props) {
               </span>
             </h6>
             <p className='tracking-normal'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-              animi dignissimos voluptates possimus. Voluptas labore dolor
-              quaerat aperiam iusto. Sed impedit at quasi saepe reprehenderit
-              fuga voluptas commodi sint placeat.
+              {pageInfo?.backgroundInformation}
             </p>
           </div>
         </div>
