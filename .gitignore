@@ -9,8 +9,6 @@
 /coverage
 
 
-sanity.cli.js
-sanity.config.js
 .env
 app/studio
 .sanity
