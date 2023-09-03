@@ -21,7 +21,6 @@ export default {
       name: 'summary',
       title: 'Summary',
       type: 'text',
-      
     },
     {
       name: 'technologies',
@@ -30,9 +29,35 @@ export default {
       of: [{ type: 'reference', to: { type: 'skill' } }],
     },
     {
+      name: 'visibility',
+      title: 'Visibility',
+      type: 'string',
+    },
+    {
+      name: 'workingNow',
+      title: 'WorkingNow',
+      type: 'string',
+    },
+    {
       name: 'linkToBuild',
       title: 'LinkToBuild',
       type: 'url',
     },
+    {
+      name: 'linkToSource',
+      title: 'LinkToSource',
+      type: 'url',
+    },
+    {
+      name: 'linkToPost',
+      title: 'LinkToPost',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'post' } }],
+    },
+    {
+      name: 'publishedAt',
+      title: 'PublishedAt',
+      type: 'string',
+    }
   ],
 };

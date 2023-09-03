@@ -55,5 +55,21 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'social' } }],
     },
+    {
+      name: 'whyFrontEnd',
+      title: 'WhyFrontEnd',
+      type: 'string',
+    },
+    {
+      name: 'interests',
+      title: 'Interests',
+      type: 'string',
+    },
+    {
+      name: 'bio',
+      title: 'Bio',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'bio' } }],
+    },
   ],
 };

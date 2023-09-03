@@ -5,14 +5,29 @@ import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Social } from '@/typings';
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { FaVimeo } from '@react-icons/all-files/fa/FaVimeo';
+import { FiSun } from '@react-icons/all-files/fi/FiSun';
+import { Acme, Amatic_SC } from 'next/font/google';
+import { cn } from '@/utils/cn';
+import { usePathname } from 'next/navigation';
 
 type Props = {
   socials: Social[];
 };
+const acme = Acme({
+  weight: ['400'],
+  subsets: ['latin'],
+});
+const AmaticSC = Amatic_SC({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+});
 
-export default function Header({ socials }: Props) {
+export default function Header({}) {
+  const pathName = usePathname();
   return (
-    <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
+    <header className='sticky top-0 p-5 mb-10 flex items-center justify-between max-w-3xl mx-auto xl:items-center bg-white/20 backdrop-blur-md z-50'>
       <motion.div
         initial={{
           x: -500,
@@ -27,60 +42,75 @@ export default function Header({ socials }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className='flex flex-row items-center'
+        className='flex flex-row justify-center items-center z-99'
       >
-        {/* Social Icons */}
-        {socials.map((social) => (
-          <SocialIcon
-          key={social._id}
-          url={social.url}
-          network={social.network}
-          fgColor='gray'
-          bgColor='transparent'
-        />
-        ))}
-        {/* <SocialIcon
-          url='https://velog.io/@49crehbgr'
-          network='vimeo'
-          fgColor='gray'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url='https://github.com/lunarmoon7'
-          network='github'
-          fgColor='gray'
-          bgColor='transparent'
-        /> */}
+        <div className='flex space-x-5 justify-center items-center text-xl'>
+          <Link
+            href='/'
+            className={cn('mr-2 md:mr-5 text-2xl md:text-5xl', acme.className)}
+          >
+            Zentechie
+          </Link>
+          <div
+            className={cn('space-x-5 text-xl md:text-3xl', AmaticSC.className)}
+          >
+            <Link
+              href='/'
+              className={cn('hover:text-orange-400 transition-all ease-in-out duration-200', pathName === '/' ? 'text-orange-400' : '')}
+            >
+              About
+            </Link>
+            <Link
+              href='/project'
+              className={cn('hover:text-orange-400 transition-all ease-in-out duration-200', pathName === '/project' ? 'text-orange-400' : '')}
+            >
+              Project
+            </Link>
+            <Link
+              href='/work'
+              className={cn('hover:text-orange-400 transition-all ease-in-out duration-200', pathName === '/work' ? 'text-orange-400' : '')}
+            >
+              Work
+            </Link>
+            <Link
+              href='/skill'
+              className={cn('hover:text-orange-400 transition-all ease-in-out duration-200', pathName === '/skill' ? 'text-orange-400' : '')}
+            >
+              Skill
+            </Link>
+          </div>
+        </div>
       </motion.div>
 
-      <Link href='#contact'>
-        <motion.div
-          initial={{
-            x: 500,
-            opacity: 0,
-            scale: 0.5,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1.5,
-          }}
-          className='flex flex-row items-center text-gray-300 cursor-pointer'
-        >
-          <SocialIcon
-            className='cursor-pointer'
-            network='email'
-            fgColor='gray'
-            bgColor='transparent'
-          />
-          <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>
-            Get In Touch
-          </p>
-        </motion.div>
-      </Link>
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className='flex justify-center items-center text-gray-300 cursor-pointer'
+      >
+        {/* Social Icons */}
+        <div className='flex justify-center items-center space-x-5'>
+          <div className='flex justify-center items-center space-x-5 border-r-2 pr-5 border-gray-300'>
+            <Link href='#'>
+              <FaVimeo className='text-3xl' color='gray' />
+            </Link>
+            <Link href='#'>
+              <FaGithub className='text-3xl' color='gray' />
+            </Link>
+          </div>
+          <FiSun className='text-3xl' color='gray' />
+        </div>
+      </motion.div>
     </header>
   );
 }

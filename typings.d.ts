@@ -12,6 +12,17 @@ interface Image {
     _type: 'reference';
   };
 }
+export interface Post extends SanityBody {
+  _type: 'post';
+  image: Image;
+  url: string;
+  title: string;
+}
+export interface Bio extends SanityBody {
+  _type: 'bio';
+  title: string;
+  year: string;
+}
 export interface PageInfo extends SanityBody {
   _type: 'pageInfo';
   address: string;
@@ -22,12 +33,19 @@ export interface PageInfo extends SanityBody {
   name: string;
   phoneNumber: string;
   profilePic: Image;
+  whyFrontEnd: string;
+  interests: string;
+  bio: Bio[];
 }
+
 export interface Technology extends SanityBody {
   _type: 'skill';
   image: Image;
   progress: number;
   title: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
 }
 
 export interface Skill extends SanityBody {
@@ -35,6 +53,9 @@ export interface Skill extends SanityBody {
   image: Image;
   progress: number;
   title: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
 }
 
 export interface Experience extends SanityBody {
@@ -55,6 +76,11 @@ export interface Project extends SanityBody {
   linkToBuild: string;
   summary: string;
   technologies: Technology[];
+  linkToSource: string;
+  linkToPost: Post[];
+  publishedAt: string;
+  workingNow: string;
+  visibility: string;
 }
 export interface Social extends SanityBody {
   _type: 'social';

@@ -17,6 +17,5 @@ export async function GET(
   res: NextResponse<Data>
 ) {
   const experiences: Experience[] = await client.fetch(query);
-  console.log('fetching experiences', experiences);
   return NextResponse.json({ experiences });
 }

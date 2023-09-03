@@ -10,12 +10,9 @@ const query = groq`
     }
 `;
 type Data = {
-    projects: Project[];
+  projects: Project[];
 };
-export async function GET(
-  req: NextRequest,
-  res: NextResponse<Data>
-) {
+export async function GET(req: NextRequest, res: NextResponse<Data>) {
   const projects: Project[] = await client.fetch(query);
   return NextResponse.json({ projects });
 }

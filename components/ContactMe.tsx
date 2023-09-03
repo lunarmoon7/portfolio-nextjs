@@ -40,16 +40,16 @@ export default function ContactMe({}: Props) {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className='w-full flex flex-col space-y-2 sm:w-fit mx-auto'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full px-3 md:px-0 flex flex-col space-y-2 sm:w-fit justify-center'>
           <div className='flex space-x-2'>
-            <input {...register('name')} placeholder='Name' className='contactInput' type='text' />
-            <input {...register('email')} placeholder='Email' className='contactInput' type='email' />
+            <input {...register('name')} placeholder='Name' className='contactInput w-full' type='text' />
+            <input {...register('email')} placeholder='Email' className='contactInput w-full' type='email' />
           </div>
           <input {...register('subject')} placeholder='Subject' className='contactInput' type='text' />
           <textarea {...register('message')} placeholder='Message' className='contactInput' />
           <button
             type='submit'
-            className='bg-[#f7ab0a] py-3 px-10 rounded-md text-black font-bold text-lg'
+            className='bg-[#f7ab0a] py-3 px-10 rounded-md text-black font-bold text-lg hover:scale-110 hover:bg-[#ffcd61] transition-all ease-in-out duration-300 active:bg-[#ffcd61]'
           >
             Submit
           </button>

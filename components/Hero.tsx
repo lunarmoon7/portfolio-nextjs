@@ -2,52 +2,66 @@
 
 import React from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PageInfo } from '@/typings';
 import { urlForImage } from '@/sanity/lib/image';
+
 type Props = {
   pageInfo: PageInfo;
 };
 
-export default function Hero({pageInfo}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
-    words: [`Hi there, I'm ${pageInfo.name}`, 'Welcome to my portfolio!'],
+    words: [
+      `프론트엔드 개발자 문휘식입니다.`,
+      'Frontend Developer Moon Hwisik',
+    ],
     loop: true,
     delaySpeed: 2000,
   });
   return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-      <BackgroundCircles />
-      <img
-        className='relative rounded-full h-32 w-32 mx-auto object-cover'
-        src={urlForImage(pageInfo?.heroImage).url()}
-        alt='Profile Image'
-      />
-      <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
-          {pageInfo?.role}
-        </h2>
-        <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
-          <span className='mr-3'>{text}</span>
-          <Cursor cursorColor='#F7AB0A' />
-        </h1>
-
-        <div className='pt-5'>
-          <Link href='#about'>
-            <button className='heroButton'>About</button>
-          </Link>
-          <Link href='#experience'>
-            <button className='heroButton'>Experience</button>
-          </Link>
-          <Link href='#skills'>
-            <button className='heroButton'>Skills</button>
-          </Link>
-          <Link href='#projects'>
-            <button className='heroButton'>Projects</button>
-          </Link>
+    <div className='max-w-2xl mx-auto flex flex-col justify-center space-y-10'>
+      <div className='text-center text-xl font-bold rounded-lg bg-gray-300 p-5'>
+        {text}
+      </div>
+      <div className='flex flex-col justify-between items-center space-y-5 md:flex-row'>
+        <div className=''>
+          <h1 className='text-4xl font-bold'>{pageInfo.name}</h1>
+          <h3 className='text-lg font-semibold'>{pageInfo.role}</h3>
         </div>
+        <div className='rounded-full w-32 h-32 relative border-2 border-[#f79756]'>
+          <Image
+            src={urlForImage(pageInfo?.heroImage).url()}
+            alt='Profile_Image'
+            layout='fill'
+            objectFit='cover'
+            className='rounded-full'
+          />
+        </div>
+      </div>
+      <div className='flex flex-col justify-center space-y-5'>
+        <h1 className='text-3xl font-bold'>Why Frontend?</h1>
+        <div>{pageInfo?.whyFrontEnd}</div>
+      </div>
+      <div className='flex flex-col justify-center space-y-5'>
+        <h1 className='text-3xl font-bold'>Interest in..</h1>
+        <div>{pageInfo?.interests}</div>
+      </div>
+      <div>
+        <h1 className='text-3xl font-bold'>Bio</h1>
+        <div>
+          <ul className='list-inside'>
+            {pageInfo?.bio?.map((bio, index) => (
+              <li key={bio._id} className='space-x-3 text-left flex items-center text-xl'>
+                <span className='font-bold'>{bio.year}</span>
+                <span>{bio.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h1 className='text-3xl font-bold'>Contact</h1>
       </div>
     </div>
   );

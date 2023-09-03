@@ -17,6 +17,24 @@ export default {
       validation: (Rule) => Rule.min(0).max(100),
     },
     {
+      name: 'color',
+      title: 'Color',
+      type: 'string',
+      description: 'Color of Skill',
+    },
+    {
+      name: 'bgColor',
+      title: 'Background Color',
+      type: 'string',
+      description: 'Background Color of Skill',
+    },
+    {
+      name: 'borderColor',
+      title: 'Border Color',
+      type: 'string',
+      description: 'Border Color of Skill',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
