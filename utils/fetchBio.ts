@@ -8,7 +8,5 @@ export const fetchPost = async () => {
   const data = await res.json();
   const bios: Bio[] = data.bios;
 
-  console.log('fetching', bios);
-
   return bios;
 };

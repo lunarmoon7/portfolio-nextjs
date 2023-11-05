@@ -13,7 +13,8 @@ export async function GET(req: NextRequest, res: NextResponse<Data>) {
     *[_type == "project" && _id == "${projectId}"] {
         ...,
         linkToPost[]->,
-        technologies[]->
+        technologies[]->,
+        features[]->
     }[0]
 `;
   const project: Project = await client.fetch(query);

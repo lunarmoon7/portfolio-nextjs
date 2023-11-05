@@ -12,7 +12,15 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        acme: ['var(--font-acme)'],
+        amaticsc: ['var(--font-amaticsc)'],
+        jua: ['var(--font-jua)'],
+        poppins: ['var(--font-poppins)'],
+        mplus: ['var(--font-mplus-rounded-1c)'],
+      },
     },
   },
+  darkMode: 'class', // or 'media' or 'class
   plugins: [require('tailwind-scrollbar')],
 };

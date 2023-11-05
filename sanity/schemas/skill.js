@@ -23,13 +23,13 @@ export default {
       description: 'Color of Skill',
     },
     {
-      name: 'bgColor',
+      name: 'bgcolor',
       title: 'Background Color',
       type: 'string',
       description: 'Background Color of Skill',
     },
     {
-      name: 'borderColor',
+      name: 'bordercolor',
       title: 'Border Color',
       type: 'string',
       description: 'Border Color of Skill',

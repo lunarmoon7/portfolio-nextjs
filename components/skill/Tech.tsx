@@ -9,7 +9,7 @@ type Props = {
 
 const Tech = ({ skill }: Props) => {
   return (
-    <div className='flex items-center rounded-xl w-full bg-gray-200 p-5 space-x-5 md:flex-col md:justify-center md:items-center md:space-x-0 md:space-y-10 shadow-md cursor-pointer hover:scale-105 transition-all ease-in-out duration-300'>
+    <div className='flex items-center rounded-xl w-full bg-white p-5 space-x-5 md:flex-col md:justify-center md:items-center md:space-x-0 md:space-y-10 shadow-md cursor-pointer hover:scale-105 transition-all ease-in-out duration-300'>
       {/* Tech Image */}
       <div className='w-24 h-20 relative md:w-28 md:h-28'>
         <Image

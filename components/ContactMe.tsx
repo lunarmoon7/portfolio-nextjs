@@ -1,6 +1,6 @@
 'use client';
 
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
+import { EnvelopeIcon } from '@heroicons/react/20/solid';
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 

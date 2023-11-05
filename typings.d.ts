@@ -44,8 +44,8 @@ export interface Technology extends SanityBody {
   progress: number;
   title: string;
   color: string;
-  bgColor: string;
-  borderColor: string;
+  bgcolor: string;
+  bordercolor: string;
 }
 
 export interface Skill extends SanityBody {
@@ -54,10 +54,9 @@ export interface Skill extends SanityBody {
   progress: number;
   title: string;
   color: string;
-  bgColor: string;
-  borderColor: string;
+  bgcolor: string;
+  bordercolor: string;
 }
-
 export interface Experience extends SanityBody {
   _type: 'experience';
   company: string;
@@ -81,6 +80,7 @@ export interface Project extends SanityBody {
   publishedAt: string;
   workingNow: string;
   visibility: string;
+  features: string[];
 }
 export interface Social extends SanityBody {
   _type: 'social';

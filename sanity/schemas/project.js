@@ -58,6 +58,12 @@ export default {
       name: 'publishedAt',
       title: 'PublishedAt',
       type: 'string',
-    }
+    },
+    {
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
   ],
 };

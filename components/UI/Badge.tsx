@@ -2,30 +2,57 @@ import { cn } from '@/utils/cn';
 
 export const DurationBadge = ({ duration }: { duration: string }) => {
   return (
-    <span className=' bg-slate-500 text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded-xl border-2 border-black shadow-md shadow-gray-300'>
-      {duration}
+    <span className='text-gray-500 text-sm font-medium mr-2 px-2.5 py-0.5'>
+      in {duration}
     </span>
   );
 };
-export const TechStackBadge = ({
-  name,
-  color,
-  bgColor,
-  borderColor,
-}: {
-  name?: string;
-  color: string;
-  bgColor: string;
-  borderColor: string;
-}) => {
-  console.log(cn(color, bgColor, borderColor));
+export const TechStackBadge = ({ name }: { name?: string }) => {
+  let color, bgColor, borderColor, shadow;
+  if (name === 'React') {
+    color = 'text-white';
+    bgColor = 'bg-[#61dafb]';
+    shadow = 'shadow-[#61dafb]';
+    borderColor = 'border-[#20232a]';
+  } else if (name === 'JavaScript') {
+    color = 'text-black';
+    bgColor = 'bg-[#F0DB4F]';
+    shadow = 'shadow-[#F0DB4F]';
+    borderColor = 'border-[#ac9c36]';
+  } else if (name === 'HTML5') {
+    color = 'text-white';
+    bgColor = 'bg-[#E34C26]';
+    shadow = 'shadow-[#E34C26]';
+    borderColor = 'border-[#f06529]';
+  } else if (name === 'CSS3') {
+    color = 'text-white';
+    bgColor = 'bg-[#264de4]';
+    shadow = 'shadow-[#264de4]';
+    borderColor = 'border-[#2965f1]';
+  } else if (name === 'TypeScript') {
+    color = 'text-white';
+    bgColor = 'bg-[#007acc]';
+    shadow = 'shadow-[#007acc]';
+    borderColor = 'border-[#264de4]';
+  } else if (name === 'NextJS') {
+    color = 'text-white';
+    bgColor = 'bg-[#000000]';
+    shadow = 'shadow-[#000000]';
+    borderColor = 'border-white';
+  } else if (name === 'tailwindCSS') {
+    color = 'text-white';
+    bgColor = 'bg-[#0fa4e8]';
+    shadow = 'shadow-[#0fa4e8]';
+    borderColor = 'border-[#84ccec]';
+  }
   return (
     <span
       className={cn(
-        'text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full shadow-md border-2 ',
+        'text-md font-medium mr-2 px-2.5 py-0.5 rounded-full shadow-md border-2 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out',
         color,
         bgColor,
-        borderColor
+        borderColor,
+        shadow
       )}
     >
       {name}

@@ -1,10 +1,50 @@
 import Header from '@/components/Header';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import {
+  Inter,
+  Acme,
+  Amatic_SC,
+  Jua,
+  Poppins,
+  M_PLUS_Rounded_1c,
+} from 'next/font/google';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const acme = Acme({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-acme',
+});
+const AmaticSC = Amatic_SC({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-amatic-sc',
+});
+
+const jua = Jua({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-jua',
+});
+
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+});
+
+const mplus = M_PLUS_Rounded_1c({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  variable: '--font-m-plus-rounded-1c',
+});
 
 export const metadata: Metadata = {
   title: `ZenTechie's Portfolio`,
@@ -17,12 +57,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <div className='bg-white text-black h-screen overflow-y-scroll relative'>
-          <Header />
+    <html
+      lang='en'
+      className={`${inter.className} ${acme.variable} ${AmaticSC.variable} ${jua.variable} ${poppins.variable} ${mplus.variable}`}
+    >
+      <body>
+        <div className=' bg-[#EFE6CD] text-black h-screen overflow-y-scroll relative'>
+          <nav className='bg-[#7D8758]/60 sticky top-0 '>
+            <Header />
+          </nav>
+
           {children}
-          <div id='wrapper' className='max-h-max relative'/>
+          <div id='wrapper' className='max-h-max relative' />
           <Footer />
         </div>
       </body>

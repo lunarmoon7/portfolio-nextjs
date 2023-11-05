@@ -35,14 +35,14 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
               {/* Name and Duration */}
               <div id='project-name_badge' className='flex space-x-3 items-end'>
                 <h1 className='text-3xl font-bold'>{project.title}</h1>
+                <DurationBadge duration={project.publishedAt} />
                 <VisibilityBadge visibility={project.visibility} />
                 <ProgressBadge isWorkingNow={project.workingNow} />
-                <DurationBadge duration={project.publishedAt} />
               </div>
               {/* Tech Stack Badge */}
               <div className='flex items-center flex-wrap'>
                 {project.technologies.map((tech) => (
-                  <TechStackBadge name={tech.title} key={tech._id} color={tech.color} bgColor={tech.bgColor} borderColor={tech.borderColor}/>
+                  <TechStackBadge name={tech.title} key={tech._id} />
                 ))}
               </div>
               {/* Description */}
@@ -78,6 +78,9 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
               >
                 See on Web
               </Link>
+              {/* {project.features.map((feature) => (
+                <div key={1} className='text-black'>{feature.title}</div>
+              ))} */}
             </div>
           </div>
         </div>

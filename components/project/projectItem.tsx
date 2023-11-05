@@ -27,7 +27,7 @@ const ProjectItem = ({
             />
           </div>
           <div className='pt-3 text-xl font-bold'>{project?.title}</div>
-          <div className='p-5 flex'>{project?.summary}d</div>
+          <div className='p-5 flex'>{project?.summary}</div>
         </div>
       </Link>
     </div>
